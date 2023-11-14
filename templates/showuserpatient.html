@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users with no booking </title>
+    <style>
+ body {
+            background-image: url('/static/download2.jpeg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px; /* Adjust the margin based on your design */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            color: white;
+        }
+
+       
+        
+
+        h1 {
+            text-align: center;
+            color: white; /* Adjust text color for better visibility */
+        }
+    </style>
+</head>
+<body>
+    <h1>Users with no booking </h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>srfid</th>
+            <th>email</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/returns" class="btn btn-info">Return</a>
+</body>
+</html>

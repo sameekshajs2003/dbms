@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient Data</title>
+    <style>
+    body {
+            background-image: url('/static/download2.jpeg');
+            background-size: cover;
+            background-position: center;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px; /* Adjust the margin based on your design */
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+            color: white;
+        }
+
+       
+        
+
+        h1 {
+            text-align: center;
+            color: white; /* Adjust text color for better visibility */
+        }
+    </style>
+</head>
+<body>
+    <h1>Patient  Data</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>srfid</th>
+            <th>bedtype</th>
+            <th>hcode</th>
+            <th>spo2</th>
+            <th>patient name</th>
+            <th>phone number</th>
+            <th>patient address</th>
+            <th>dob</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+            <td>{{ row[5] }}</td>
+            <td>{{ row[6] }}</td>
+            <td>{{ row[7] }}</td>
+            <td>{{ row[8] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/returns" class="btn btn-info">Return</a>
+</body>
+</html>
